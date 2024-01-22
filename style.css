@@ -23,25 +23,43 @@ body {
     background-clip: content-box;
 }
 
-header{
-    width: 97%;
-    margin: auto;
+.fixed-banner {
+    background-color:  var(--secondary-color); /* Replace with your secondary color */
+    padding: 10px 0; /* Adjust the padding as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional box shadow */
+    z-index: 1000; /* Set a high z-index to make it appear above other content */
 }
-.heroTitle{
-    background-color: var(--secondary-color);
-    font-size: 5rem;
-    font-weight: 700;
-    color: var(--accent-color);
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    max-width: 100px; /* Set the maximum width for your logo */
+    height: auto;
+}
+
+.slogan {
+    margin-top: 10px; /* Adjust the margin as needed */
+    font-size: 18px; /* Adjust the font size as needed */
+    color: #fff; /* Set the text color to contrast with the background */
     text-align: center;
-    margin-top: 2rem;
-    width: 50%;
-    border-radius: 10px;
+    font-weight: bold;
 }
+
 main{
     width: 90%;
     margin: 0 auto;
+    margin-top: 160px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -593,7 +611,26 @@ margin-left: 10px;
 }
 
 
-Copy code
+.togglesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between columns as needed */
+}
+
+.toggle {
+    flex-basis: calc(33.33% - 20px);
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 768px) {
+    .toggle {
+        flex-basis: calc(50% - 20px); /* Adjust for 2 columns on smaller screens */
+    }
+}
+
 @media screen and (max-width: 768px) {
   /* Mobile Layout: Single column for .toggle.amountcontainers */
   .togglesContainer {
@@ -623,7 +660,6 @@ Copy code
     margin-bottom: 2.5%;
   }
 
-  /* Adjust other styles as needed for mobile layout */
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
