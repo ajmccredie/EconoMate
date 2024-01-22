@@ -253,7 +253,7 @@ export function renderPieChart(budgetAmounts, categories) {
 
     // Define the configuration for the pie chart
     let myConfig = {
-        backgroundColor: '#1F8275',
+        backgroundColor: 'none',
         type: 'pie',
         contextMenu: {
             visible: false

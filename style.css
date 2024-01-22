@@ -65,6 +65,10 @@ main{
 
 #myChart{
     border-radius: 5px;
+    background-color: rgba(255, 255, 255, 50%);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(28,101,112,1);
+    box-shadow: -2px 2px 0px rgba(28,101,112,0.5);
 }
 
 .monthlyRevenueContainer{
@@ -104,11 +108,11 @@ main{
     width: 50%;
 }
 .togglesContainer{
-
     width: 100%;
     margin-top: 1rem;
     padding: 0.2rem;
-    background-color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 3%);
+    backdrop-filter: blur(4px);
     border-radius: 10px;
     color: var(--text-color);
 }
@@ -118,10 +122,12 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--white-color);
+    background-color: rgba(255, 255, 255, 50%);
+    backdrop-filter: blur(6px);
     margin: 0.5rem auto;
     border-radius: 10px;
-    box-shadow: -4px 4px 0px rgba(28,101,112,1);
+    box-shadow: -2px 2px 0px rgba(28,101,112,1);
+    border: 1px solid rgba(28,101,112,1);
     text-align: center;
     padding: 2px;
     font-family: "Wire One", sans-serif;
@@ -173,7 +179,8 @@ margin-left: 10px;
     text-shadow: 0px 9px 0px rgba(28,101,112,0.75);  ;
 }
 .containerShadow{
-    box-shadow: -4px 4px 0px rgba(28,101,112,1);
+    border: 1px solid rgba(28,101,112,1);
+    box-shadow: -2px 2px 0px rgba(28,101,112,0.5);
 }
 
 #currency, #current-currency, #originalBudget, #totalBudget{
@@ -584,3 +591,99 @@ margin-left: 10px;
         width:48%;
     }
 }
+
+
+Copy code
+@media screen and (max-width: 768px) {
+  /* Mobile Layout: Single column for .toggle.amountcontainers */
+  .togglesContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .toggle {
+    width: 100%;
+    margin: 0.5rem auto;
+  }
+  .amountContainer {
+    width: 100%;
+  }
+  .slider {
+    width: 100%;
+  }
+  .lockButton {
+    width: 100%;
+    margin-right: 0;
+  }
+  .leftSide {
+    width: 100%;
+  }
+  .pie-chart {
+    width: 100%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+  }
+
+  /* Adjust other styles as needed for mobile layout */
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* Medium Screen Layout: Two columns for the buttons */
+  .toggle {
+    width: 48%;
+  }
+  .togglesContainer {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .amountContainer {
+    width: 45%;
+  }
+  .slider {
+    width: 70%;
+    margin-right: 5%;
+  }
+  .lockButton {
+    width: 15%;
+    margin-right: 0;
+  }
+  .leftSide {
+    width: 50%;
+  }
+  .pie-chart {
+    width: 50%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* Adjust other styles as needed for medium layout */
+}
+
+@media screen and (min-width: 1025px) {
+  /* Large Screen Layout: Single column with pie chart on the right */
+  .togglesContainer {
+    flex-direction: column;
+    align-items: center;
+    width: 60%
+  }
+  .toggle {
+    width: 95%;
+    margin: 0.5rem auto;
+  }
+  .amountContainer {
+    width: 90%;
+  }
+  .slider {
+    width: 30%;
+  }
+  .lockButton {
+    width: 50px;
+    margin-right: 0;
+  }
+  .leftSide {
+    width: 100%;
+  }
+  .pie-chart {
+    width: 100%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+  }
