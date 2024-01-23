@@ -12,9 +12,9 @@ html{
 
 body {
     margin: 0;
-    margin-top: 100px;
+    margin-top: 90px;
     padding: 0;
-    font-family: Lexend, sans-serif;
+    font-family: "Wire One", Lexend, sans-serif;
     background-color: transparent;
     background-image: url('bg-image.png');
     background-size: cover;
@@ -38,30 +38,50 @@ body {
     z-index: 2;
 }
 
+.top-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-logo {
+    font-size: 3rem;
+    font-family: "Unbounded", Lexend, sans-serif;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
 .logo-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .logo {
-    max-width: 100px; /* Set the maximum width for your logo */
-    height: auto;
+    max-height: 40px;
+    width: auto;
 }
 
 .slogan {
-    margin-top: 10px; /* Adjust the margin as needed */
-    font-size: 28px; /* Adjust the font size as needed */
-    color: #fff; /* Set the text color to contrast with the background */
+    margin-top: 10px;
+    font-size: 28px; 
+    color: #fff;
     text-align: center;
     font-weight: bold;
     font-family: "Wire One", sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 main{
     width: 90%;
     margin: 0 auto;
-    margin-top: 160px;
+    margin-top: 130px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,7 +99,6 @@ main{
     justify-content: center;
     margin-top: 2.5%;
     margin-bottom: 2.5%;
-    
 }
 
 
@@ -89,6 +108,7 @@ main{
     backdrop-filter: blur(6px);
     border: 1px solid rgba(28,101,112,1);
     box-shadow: -2px 2px 0px rgba(28,101,112,0.5);
+    overflow: none;
 }
 
 .monthlyRevenueContainer{
@@ -111,6 +131,7 @@ main{
     display: flex;
     justify-content: space-around;
     font-weight: 600;
+    line-height: normal;
 }
 .originalBudgetContainer{
     display: flex;
@@ -158,7 +179,7 @@ main{
 margin-left: 10px;
 }
 .amountContainer{
-    width: 60%;
+    width: 70%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -175,7 +196,6 @@ margin-left: 10px;
     transition: opacity .2s;
     border-radius: 10px;
     margin-right: 10px;
- 
 }
 
 
@@ -203,9 +223,6 @@ margin-left: 10px;
     box-shadow: -2px 2px 0px rgba(28,101,112,0.5);
 }
 
-#currency, #current-currency, #originalBudget, #totalBudget{
-    /* max-width: 75px; */
-}
 .titleCurrency{
    display: flex;
     justify-content: space-between;
@@ -213,7 +230,6 @@ margin-left: 10px;
     height: 50px;
     width: 97%;
     font-size: 2rem;
-    
 }
 .splitButton{
     width: 95%;
@@ -486,7 +502,7 @@ margin-left: 10px;
     right: 0; /* Position at the right edge of the screen */
     top: 30%; /* Position at the vertical center of the screen */
     transform: translateY(-50%); /* Adjust for modal's own dimensions */
-    width: 30%; /* Half of the screen width */
+    width: 40%;
     height: 50%; /* Full height */
 }
 
@@ -499,7 +515,6 @@ margin-left: 10px;
 
 /* The Close Button */
 .close {
-    
     color:var(--text-color);
     font-size: 3rem;
     font-weight: bold;
@@ -565,18 +580,23 @@ margin-left: 10px;
 /* Large screens - Two columns (toggles and graph) */
 @media screen and (min-width: 768px) {
     .data-visuals {
+        margin-top: 15px;
+        margin-bottom: 15px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
 
     .togglesContainer {
+        margin-top: 0;
+        margin-bottom: 0;
         width: 48%; /* Adjust the width as needed */
     }
 
     .pie-chart {
         width: 48%; /* Adjust the width as needed */
         margin-top: 0;
+        margin-bottom: 0;
     }
 }
 
@@ -585,11 +605,14 @@ margin-left: 10px;
     .data-visuals {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
     }
 
     .togglesContainer {
-        width: 100%; /* Take full width */
+        width: 95%;
+        padding-left: 3px;
+        padding-right: 3px;
     }
 
     .pie-chart {
@@ -599,7 +622,7 @@ margin-left: 10px;
 }
 
 /* Small screens - All in one column */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 699px) {
     .data-visuals {
         display: block;
         width: 97%;
@@ -609,5 +632,42 @@ margin-left: 10px;
     .togglesContainer, .pie-chart {
         width: 95%;
         margin-top: 20px; /* Add some spacing between elements */
+    }
+}
+
+/* Tiny screens - All in one column */
+@media screen and (max-width: 415px) {
+    .data-visuals {
+        display: block;
+        width: 97%;
+    }
+
+    .main-logo {
+        font-size: 2rem;
+    }
+
+    .togglesContainer, .pie-chart {
+        width: 95%;
+        margin-top: 20px; /* Add some spacing between elements */
+    }
+
+    .amountContainer{
+        width: 78%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .slider {
+        -webkit-appearance: none;
+        width: 50%; /* Now this is the height */
+        height: 30px; /* Now this is the width */
+        background: var(--text-color);
+        outline: none;
+        opacity: 1;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+        border-radius: 7px;
+        margin-right: 15px;
     }
 }

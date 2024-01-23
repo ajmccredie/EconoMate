@@ -261,7 +261,7 @@ export function renderPieChart(budgetAmounts, categories) {
         title: {
             text: 'Budget Distribution',
             fontFamily: 'Wire One',
-            fontSize: 60,
+            fontSize: 50,
             fontColor: '#2F4858;',
         },
         series: series,
@@ -269,17 +269,44 @@ export function renderPieChart(budgetAmounts, categories) {
             sizeFactor: 100,
             tooltip: {
                 text: "%t: %v (%npv%)",
-                decimals: 2,
+                decimals: 1,
                 thousandSeparator: ","
             },
             valueBox: {
                 placement: 'out',
                 text: '%t\n%npv%',
-                fontSize: 20,
+                fontSize: 10,
                 visible: true,
+                decimals: 0,
+            },
+            plotarea: {
+                marginTopOffset: "60%",
             },
         },
-        
+        legend: {
+            x: "5%",
+            y: "80%",
+            'border-width': 1,
+            'border-color': "gray",
+            'border-radius': "5px",
+            header: {
+                text: "Legend",
+                'font-family': "Wire One",
+                'font-size':12,
+                'font-color': "#2F4858",
+                'font-weight': "normal"
+            },
+            marker: {
+                type: "circle"
+            },
+            'minimize': true,
+            'toggle-action': "none",
+            'icon': {
+                'line-color': "#9999ff"
+            },
+            'max-items':2,
+            'overflow': "scroll"
+        },    
     };
 
     // Render the chart with the given configuration
